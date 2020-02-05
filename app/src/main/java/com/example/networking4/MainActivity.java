@@ -24,7 +24,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    String url = "freejsonapi/posts";
+    String url = "https://freejsonapi.com/posts";
 
     public RecyclerView rvView;
 
@@ -87,18 +87,44 @@ rvView.setLayoutManager(layoutManager);
                 JSONArray data = topLevel.getJSONArray("data");
 
                 for (int i = 0; i < data.length(); i++) {
-                    JSONObject c = data.getJSONObject(i);
-                    String id = c.getString("id");
-                    String urlJson = c.getString("url");
-                    String comments = c.getString("comments_url");
-                    String title = c.getString("title");
-                    String slug = c.getString("slug");
-                    String image = c.getString("featured_image");
-                    String body = c.getString("body");
-                    String created = c.getString("created_at");
-                    String updated = c.getString("updated_at");
+                    JSONObject topLevelDataObj = data.getJSONObject(i);
+                    String id = topLevelDataObj.getString("id");
+                    String urlJson = topLevelDataObj.getString("url");
+                    String comments = topLevelDataObj.getString("comments_url");
+                    String title = topLevelDataObj.getString("title");
+                    String slug = topLevelDataObj.getString("slug");
+                    String image = topLevelDataObj.getString("featured_image");
+                    String body = topLevelDataObj.getString("body");
+                    String created = topLevelDataObj.getString("created_at");
+                    String updated = topLevelDataObj.getString("updated_at");
 
-                    PostModel postModel = new PostModel(id, urlJson, comments, title, slug, image, body, created, updated);
+                    JSONObject userObject = topLevelDataObj.getJSONObject("user");
+                    JSONObject dataObject = userObject.getJSONObject("data");
+
+                    String dataId = dataObject.getString("id");
+                    String dataUrl = dataObject.getString("url");
+                    String dataName = dataObject.getString("name");
+                    String dataEmail = dataObject.getString("email");
+                    String dataEmailVerif = dataObject.getString("email_verified_at");
+                    String dataCreate = dataObject.getString("created_at");
+                    String dataUpdate = dataObject.getString("updated_at");
+
+                    JSONObject metObject = topLevel.getJSONObject("meta");
+                    JSONObject paginationObject = metObject.getJSONObject("pagination");
+
+                    String total = paginationObject.getString("total");
+                    String count = paginationObject.getString("count");
+                    String perPage = paginationObject.getString("per_page");
+                    String currentPage = paginationObject.getString("current_page");
+                    String totalPages = paginationObject.getString("total_pages");
+
+                    JSONObject linksObj = paginationObject.getJSONObject("links");
+                    String nextLink = linksObj.getString("total");
+
+
+                    PostModel postModel = new PostModel(id, urlJson, comments, title, slug, image, body, created, updated, dataId,
+                            dataUrl, dataName, dataEmail, dataEmailVerif, dataCreate, dataUpdate, total, count, perPage, currentPage,
+                            totalPages, nextLink);
                     returnedArrayList.add(postModel);
 
 

@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -41,6 +41,20 @@ holder.tv1.setText(postModel.getId());
         holder.tv7.setText(postModel.getBody());
         holder.tv8.setText(postModel.getCreated());
         holder.tv9.setText(postModel.getUpdated());
+
+        holder.data1.setText(postModel.getDataId());
+        holder.dataUrl.setText(postModel.getDataUrl());
+        holder.dataEmail.setText(postModel.getDataEmail());
+        holder.dataEmailVerification.setText(postModel.getDataEmailVerif());
+        holder.dataCreated.setText(postModel.getDataCreate());
+        holder.dataUpdated.setText(postModel.getDataUpdate());
+
+        holder.total.setText(postModel.getTotal());
+        holder.count.setText(postModel.getCount());
+        holder.perPage.setText(postModel.getPerPage());
+        holder.currentPage.setText(postModel.getCurrentPage());
+        holder.totalPages.setText(postModel.getTotalPage());
+        holder.nextLink.setText(postModel.getNext());
     }
 
     @Override
@@ -60,6 +74,21 @@ holder.tv1.setText(postModel.getId());
         TextView tv8;
         TextView tv9;
 
+        TextView data1;
+        TextView dataUrl;
+        TextView dataName;
+        TextView dataEmail;
+        TextView dataEmailVerification;
+        TextView dataCreated;
+        TextView dataUpdated;
+
+        TextView total;
+        TextView count;
+        TextView perPage;
+        TextView currentPage;
+        TextView totalPages;
+        TextView nextLink;
+
         public ViewHolder(View itemView) {
             super(itemView);
             tv1 = itemView.findViewById(R.id.textView);
@@ -71,6 +100,21 @@ holder.tv1.setText(postModel.getId());
             tv7 = itemView.findViewById(R.id.textView7);
             tv8 = itemView.findViewById(R.id.textView8);
             tv9 = itemView.findViewById(R.id.textView9);
+
+            data1 = itemView.findViewById(R.id.textView10);
+            dataUrl = itemView.findViewById(R.id.textView11);
+            dataName = itemView.findViewById(R.id.textView12);
+            dataEmail = itemView.findViewById(R.id.textView13);
+            dataEmailVerification = itemView.findViewById(R.id.textView14);
+            dataCreated = itemView.findViewById(R.id.textView15);
+            dataUpdated = itemView.findViewById(R.id.textView16);
+
+            total = itemView.findViewById(R.id.textView17);
+            count = itemView.findViewById(R.id.textView18);
+            perPage = itemView.findViewById(R.id.textView19);
+            currentPage = itemView.findViewById(R.id.textView20);
+            totalPages = itemView.findViewById(R.id.textView21);
+            nextLink = itemView.findViewById(R.id.textView22);
         }
     }
 }

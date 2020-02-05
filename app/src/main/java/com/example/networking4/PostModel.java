@@ -14,7 +14,23 @@ public class PostModel {
     public String created;
     public String updated;
 
-    public PostModel(String id, String url, String comments, String title, String slug, String image, String body, String created, String updated) {
+    public String dataId;
+    public String dataUrl;
+    public String dataName;
+    public String dataEmail;
+    public String dataEmailVerif;
+    public String dataCreate;
+    public String dataUpdate;
+
+    String total;
+    String count;
+    String perPage;
+    String currentPage;
+    String totalPage;
+    String next;
+
+
+    public PostModel(String id, String url, String comments, String title, String slug, String image, String body, String created, String updated, String dataId, String dataUrl, String dataName, String dataEmail, String dataEmailVerif, String dataCreate, String dataUpdate, String total, String count, String perPage, String currentPage, String totalPage, String next) {
         this.id = id;
         this.url = url;
         this.comments = comments;
@@ -24,6 +40,115 @@ public class PostModel {
         this.body = body;
         this.created = created;
         this.updated = updated;
+        this.dataId = dataId;
+        this.dataUrl = dataUrl;
+        this.dataName = dataName;
+        this.dataEmail = dataEmail;
+        this.dataEmailVerif = dataEmailVerif;
+        this.dataCreate = dataCreate;
+        this.dataUpdate = dataUpdate;
+        this.total = total;
+        this.count = count;
+        this.perPage = perPage;
+        this.currentPage = currentPage;
+        this.totalPage = totalPage;
+        this.next = next;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public String getCount() {
+        return count;
+    }
+
+    public void setCount(String count) {
+        this.count = count;
+    }
+
+    public String getPerPage() {
+        return perPage;
+    }
+
+    public void setPerPage(String perPage) {
+        this.perPage = perPage;
+    }
+
+    public String getCurrentPage() {
+        return currentPage;
+    }
+
+    public void setCurrentPage(String currentPage) {
+        this.currentPage = currentPage;
+    }
+
+    public String getTotalPage() {
+        return totalPage;
+    }
+
+    public void setTotalPage(String totalPage) {
+        this.totalPage = totalPage;
+    }
+
+    public String getNext() {
+        return next;
+    }
+
+    public void setNext(String next) {
+        this.next = next;
+    }
+
+    public String getDataUrl() {
+        return dataUrl;
+    }
+
+    public void setDataUrl(String dataUrl) {
+        this.dataUrl = dataUrl;
+    }
+
+    public String getDataName() {
+        return dataName;
+    }
+
+    public void setDataName(String dataName) {
+        this.dataName = dataName;
+    }
+
+    public String getDataEmail() {
+        return dataEmail;
+    }
+
+    public void setDataEmail(String dataEmail) {
+        this.dataEmail = dataEmail;
+    }
+
+    public String getDataEmailVerif() {
+        return dataEmailVerif;
+    }
+
+    public void setDataEmailVerif(String dataEmailVerif) {
+        this.dataEmailVerif = dataEmailVerif;
+    }
+
+    public String getDataCreate() {
+        return dataCreate;
+    }
+
+    public void setDataCreate(String dataCreate) {
+        this.dataCreate = dataCreate;
+    }
+
+    public String getDataUpdate() {
+        return dataUpdate;
+    }
+
+    public void setDataUpdate(String dataUpdate) {
+        this.dataUpdate = dataUpdate;
     }
 
     public String getId() {
@@ -96,5 +221,13 @@ public class PostModel {
 
     public void setUpdated(String updated) {
         this.updated = updated;
+    }
+
+    public String getDataId() {
+        return dataId;
+    }
+
+    public void setDataId(String dataId) {
+        this.dataId = dataId;
     }
 }
